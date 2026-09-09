@@ -7,23 +7,40 @@ import './App.css'
 
 // Main application component for the recipe list
 function App() {
-  const [recipes, setRecipes] = useState([
-    {id:1, name: 'Spaghetti Bolognese'},
-    {id:2, name: 'Chicken Salad'},
-    {id:3, name: 'Beef Stroganoff'},
-  ]) // Array to store the list of recipes
+const [recipes, setRecipes] = useState([
+  { id: 1, name: 'Lasagne', favorite: true },
+  { id: 2, name: 'Tacos', favorite: false },
+  { id: 3, name: 'köttbullar', favorite: false }
+]) // Array to store the list of recipes
 
-  function addRecipe(name) {
-    setRecipes([
-      ...recipes,
-      { id: Date.now(), name }
-    ])
+function addRecipe(name) {
+  const newRecipe = {
+    id: Date.now(),
+    name: name,
+    favorite: false
   }
+
+  setRecipes([
+    ...recipes,
+    newRecipe
+  ])
+}
+
+function toggleFavorite(id) {
+  setRecipes(
+    recipes.map(recipe =>
+      recipe.id === id ? { ...recipe, favorite: !recipe.favorite } : recipe
+    )
+  )
+}
   return (
     <>
       <Header count={recipes.length}/>
       <RecipeForm onAdd={addRecipe} />
-      <RecipeList recipes={recipes} />
+      <RecipeList
+  recipes={recipes}
+  onToggle={toggleFavorite}
+/>
     </>
   )
 }

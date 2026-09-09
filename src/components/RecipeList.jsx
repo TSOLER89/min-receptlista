@@ -1,4 +1,4 @@
-function RecipeList({ recipes }) {
+function RecipeList({ recipes, onToggle }) {
   return (
     <section>
       <h2>Mina recept</h2>
@@ -7,6 +7,10 @@ function RecipeList({ recipes }) {
         {recipes.map((recipe) => (
           <div key={recipe.id}>
             <h3>{recipe.name}</h3>
+
+            <button onClick={() => onToggle(recipe.id)}>
+              {recipe.favorite ? '❤️ Favorit' : '🤍 Favorit'}
+            </button>
           </div>
         ))}
       </div>
