@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import Header from './components/Header.jsx'
 import RecipeForm from './components/RecipeForm.jsx'
+import RecipeList from './components/RecipeList.jsx'
 import './App.css'
 
 
@@ -22,6 +23,7 @@ function App() {
     <>
       <Header count={recipes.length}/>
       <RecipeForm onAdd={addRecipe} />
+      <RecipeList recipes={recipes} />
     </>
   )
 }
