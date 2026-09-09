@@ -1,3 +1,4 @@
+import Header from './components/Header.jsx'
 import './App.css'
 
 
@@ -5,8 +6,7 @@ import './App.css'
 function App() {
   return (
     <>
-      <h1>🍝 Min receptlista</h1>
-      <p>Här kan jag samla mina favoritrecept.</p>
+      <Header />
     </>
   )
 }
