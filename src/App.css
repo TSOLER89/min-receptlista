@@ -63,6 +63,17 @@
   cursor: pointer;
 }
 
+/* Filter buttons */
+.filters {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filters button {
+  padding: 0.6rem 1rem;
+  cursor: pointer;
+}
 
 /* Responsiv design för skärmar som är 600px eller smalare */
 @media (max-width: 600px) {
