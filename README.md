@@ -1,16 +1,42 @@
-# React + Vite
+# Min receptlista
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+En enkel receptlista byggd med React där du kan lägga till recept, markera favoriter och ta bort recept. Projektet använder lokal state i webbläsaren, så recepten sparas bara medan appen är öppen.
 
-Currently, two official plugins are available:
+## Vad är det här för projekt?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Det här är en liten webbapp för att samla recept på ett ställe. Du kan:
 
-## React Compiler
+- lägga till nya recept
+- markera recept som favoriter
+- filtrera fram bara favoriter
+- ta bort recept du inte vill ha kvar
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Vad är det byggt med?
 
-## Expanding the ESLint configuration
+- React 19
+- Vite
+- JavaScript
+- ESLint för kodkontroll
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Hur startar jag det?
+
+1. Installera beroenden:
+
+   ```bash
+   npm install
+   ```
+
+2. Starta utvecklingsservern:
+
+   ```bash
+   npm run dev
+   ```
+
+3. Öppna adressen som visas i terminalen, oftast `http://localhost:5173`.
+
+## Tillgängliga kommandon
+
+- `npm run dev` - startar utvecklingsläget
+- `npm run build` - bygger projektet för produktion
+- `npm run preview` - förhandsvisar en färdig build
+- `npm run lint` - kör ESLint
