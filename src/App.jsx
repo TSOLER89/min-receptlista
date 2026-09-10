@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect,useState } from 'react'
 import Header from './components/Header.jsx'
 import RecipeForm from './components/RecipeForm.jsx'
 import RecipeList from './components/RecipeList.jsx'
@@ -12,6 +12,13 @@ const [recipes, setRecipes] = useState([
   { id: 2, name: 'Tacos', favorite: false },
   { id: 3, name: 'Köttbullar', favorite: false }
 ]) // Array to store the list of recipes
+
+
+/* Loggar uppdateringar av receptlistan till konsolen */
+useEffect(() => {
+  document.title = `Recept (${recipes.length})`
+}, [recipes])
+
 
 function addRecipe(name) {
   const newRecipe = {
