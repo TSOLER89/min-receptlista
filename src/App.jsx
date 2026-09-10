@@ -8,9 +8,9 @@ import './App.css'
 // Main application component for the recipe list
 function App() {
 const [recipes, setRecipes] = useState([
-  { id: 1, name: 'Lasagne', favorite: true },
+  { id: 1, name: 'Grillad kyckling', favorite: true },
   { id: 2, name: 'Tacos', favorite: false },
-  { id: 3, name: 'köttbullar', favorite: false }
+  { id: 3, name: 'Köttbullar', favorite: false }
 ]) // Array to store the list of recipes
 
 function addRecipe(name) {
