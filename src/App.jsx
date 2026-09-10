@@ -7,6 +7,7 @@ import './App.css'
 
 // Main application component for the recipe list
 function App() {
+const [filter, setFilter] = useState('all')
 const [recipes, setRecipes] = useState([
   { id: 1, name: 'Grillad kyckling', favorite: true },
   { id: 2, name: 'Tacos', favorite: false },
@@ -19,6 +20,12 @@ useEffect(() => {
   document.title = `Recept (${recipes.length})`
 }, [recipes])
 
+
+/* Filtrerar recepten baserat på det valda filtret */
+const filteredRecipes =
+  filter === 'favorites'
+    ? recipes.filter((recipe) => recipe.favorite)
+    : recipes
 
 function addRecipe(name) {
   const newRecipe = {
@@ -51,8 +58,18 @@ function deleteRecipe(id) {
 
       <RecipeForm onAdd={addRecipe} />
 
+      <div className="filters">
+  <button onClick={() => setFilter('all')}>
+    Alla
+  </button>
+
+  <button onClick={() => setFilter('favorites')}>
+    Favoriter
+  </button>
+</div>
+
       <RecipeList
-  recipes={recipes}
+  recipes={filteredRecipes}
   onToggle={toggleFavorite}
   onDelete={deleteRecipe}
 />

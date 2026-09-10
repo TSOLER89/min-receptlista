@@ -3,6 +3,10 @@ function RecipeList({ recipes, onToggle, onDelete }) {
     <section className="recipe-section">
       <h2>Mina recept</h2>
 
+      {recipes.length ===0 ? (
+        <p>Inga recept ännu. Lägg till ditt första recept ovan.</p>
+      ) : (
+        
       <div className="recipe-grid">
         {recipes.map((recipe) => (
           <div className="recipe-card" key={recipe.id}>
@@ -17,6 +21,7 @@ function RecipeList({ recipes, onToggle, onDelete }) {
           </div>
         ))}
       </div>
+      )}
     </section>
   )
 }
