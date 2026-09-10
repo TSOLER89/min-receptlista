@@ -16,7 +16,7 @@ function RecipeForm({ onAdd }) {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="recipe-form" onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Skriv ett recept..."

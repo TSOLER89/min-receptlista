@@ -34,14 +34,16 @@ function toggleFavorite(id) {
   )
 }
   return (
-    <>
+    <main className="app">
       <Header count={recipes.length}/>
+
       <RecipeForm onAdd={addRecipe} />
+
       <RecipeList
   recipes={recipes}
   onToggle={toggleFavorite}
 />
-    </>
+    </main>
   )
 }
 
