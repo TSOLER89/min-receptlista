@@ -33,6 +33,11 @@ function toggleFavorite(id) {
     )
   )
 }
+function deleteRecipe(id) {
+  setRecipes(
+    recipes.filter((recipe) => recipe.id !== id)
+  )
+}
   return (
     <main className="app">
       <Header count={recipes.length}/>
@@ -42,6 +47,7 @@ function toggleFavorite(id) {
       <RecipeList
   recipes={recipes}
   onToggle={toggleFavorite}
+  onDelete={deleteRecipe}
 />
     </main>
   )

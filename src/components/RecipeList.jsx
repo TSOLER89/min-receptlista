@@ -1,4 +1,4 @@
-function RecipeList({ recipes, onToggle }) {
+function RecipeList({ recipes, onToggle, onDelete }) {
   return (
     <section className="recipe-section">
       <h2>Mina recept</h2>
@@ -10,6 +10,9 @@ function RecipeList({ recipes, onToggle }) {
 
             <button onClick={() => onToggle(recipe.id)}>
               {recipe.favorite ? '❤️ Favorit' : '🤍 Favorit'}
+            </button>
+            <button onClick={() => onDelete(recipe.id)}>
+              Ta bort
             </button>
           </div>
         ))}
